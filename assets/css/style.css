@@ -1,0 +1,136 @@
+/*====== LOGIN FORM =====*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+:root {
+    /*===== Colors ======*/
+    --body-color: #000;
+    --input-color: #bdc3c7;
+    --border-color: #dcdde1;
+    --btn-bg-hover-color: #e21e22;
+    --light-color: #fff;
+
+    /*===== Typography ======*/
+    --body-font: 'Josefin Sans', sans-serif;
+    --normal-font-size: 1.2rem;
+    --small-font-size: 1rem;
+}
+
+/*===== Base =====*/
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--body-color);
+    font-weight: normal;
+}
+
+/*==== Form =====*/
+
+.login-main {
+    width: 100%;
+    min-height: 100vh;
+    background: url(../img/bg.jpg) no-repeat center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login-form {
+    max-width: 520px;
+    margin: 0 auto;
+    background: var(--light-color);
+    padding: 60px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 35px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.login-form::after {
+    content: '';
+    width: 195px;
+    height: 50px;
+    background: url(../img/after.png) no-repeat top right / cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.login-form::before {
+    content: '';
+    width: 195px;
+    height: 50px;
+    background: url(../img/before.png) no-repeat bottom left / cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.login-form .logo img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.login-form h3 {
+    text-transform: capitalize;
+    margin: 0 0 30px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    height: 55px;
+}
+
+.form-group .form-control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    background: none;
+    z-index: 1;
+    font-size: var(--normal-font-size);
+}
+
+.form-group .form-control:focus {
+    box-shadow: none;
+    border-color: var(--body-color);
+}
+
+.form-group .form-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transition: .3s;
+    color: var(--input-color);
+    background: var(--light-color);
+    padding: 0 .25rem;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown).form-control:not(:focus) + .form-label {
+    top: -.6rem;
+    left: .8rem;
+    z-index: 10;
+    font-size: var(--small-font-size);
+    color: var(--body-color);
+}
+
+.btn-theme {
+    background: var(--body-color);
+    color: var(--light-color);
+}
+
+.btn-theme:hover {
+    background: var(--btn-bg-hover-color);
+    color: var(--light-color);
+}
